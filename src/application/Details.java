@@ -1,17 +1,15 @@
 package application;
 
 public class Details {
-	//Levels
-	
-    public static String[] gender= {
-    		"Male","Female"
-    };
+	//states in Nigeria
     public static String[] state_NG= {
         "Abuja","Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","Gombe","Imo","Jigawa","Kaduna",
     	"Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nassarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe"
     	,"Zamfara"
     	    
     };
+
+    //Local-Governments
     public  static String[] _LGAChooser(String stateSelected) {
     	if(stateSelected.equalsIgnoreCase("Delta")) {
     		String[] Delta_lga= {
