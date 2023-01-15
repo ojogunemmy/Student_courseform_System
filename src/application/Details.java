@@ -4,7 +4,7 @@ public class Details {
 	//Levels
 	
     public static String[] gender= {
-    		"Male","Female","Others"
+    		"Male","Female"
     };
     public static String[] state_NG= {
         "Abuja","Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","Gombe","Imo","Jigawa","Kaduna",
