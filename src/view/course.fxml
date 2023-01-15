@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="712.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.courseController">
+   <children>
+      <Label alignment="CENTER" layoutX="158.0" layoutY="19.0" prefHeight="18.0" prefWidth="497.0" text="UNIVERSITY OF BENIN, BENIN CITY">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="277.0" layoutY="50.0" prefHeight="27.0" prefWidth="241.0" text="FACULTY OF ENGINERING">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="226.0" layoutY="77.0" prefHeight="21.0" prefWidth="364.0" text="EXAMINIATION COURSE REGISTRATION FORM-22">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <VBox layoutX="60.0" layoutY="123.0" prefHeight="242.0" prefWidth="127.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="131.0" text="MAT NO/REG NO:">
+               <VBox.margin>
+                  <Insets bottom="9.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="18.0" prefWidth="131.0" text="SURNAME:">
+               <VBox.margin>
+                  <Insets bottom="9.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="37.0" prefHeight="18.0" prefWidth="131.0" text="OTHER NAMES:">
+               <VBox.margin>
+                  <Insets bottom="9.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="91.0" prefHeight="18.0" prefWidth="131.0" text="DEPARTMENT:">
+               <VBox.margin>
+                  <Insets bottom="9.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="64.0" prefHeight="18.0" prefWidth="131.0" text="LEVEL:">
+               <VBox.margin>
+                  <Insets bottom="9.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="118.0" prefHeight="18.0" prefWidth="131.0" text="MODE OF ENTERY:">
+               <VBox.margin>
+                  <Insets bottom="9.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="145.0" prefHeight="18.0" prefWidth="131.0" text="PHONE NO:">
+               <VBox.margin>
+                  <Insets bottom="9.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="172.0" prefHeight="18.0" prefWidth="131.0" text="EMAIL ADDRESS:">
+               <VBox.margin>
+                  <Insets bottom="9.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="199.0" prefHeight="18.0" prefWidth="131.0" text="STATE OF ORIGIN:" />
+         </children>
+      </VBox>
+      <Label layoutX="62.0" layoutY="369.0" prefHeight="20.0" prefWidth="111.0" text="Choose courses" textAlignment="CENTER">
+         <effect>
+            <Glow level="0.33" />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="ADDCOURSE" alignment="CENTER" layoutX="60.0" layoutY="435.0" mnemonicParsing="false" onAction="#onAddClick" prefHeight="30.0" prefWidth="67.0" style="-fx-background-color: blue; -fx-border-style: solid; -fx-border-color: white; -fx-border-radius: 50; -fx-background-radius: 50;" text="ADD" textFill="#fcf8f8">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="REMOVECOURSE" alignment="CENTER" layoutX="61.0" layoutY="476.0" mnemonicParsing="false" onAction="#onRemoveClick" prefHeight="30.0" prefWidth="67.0" style="-fx-background-color: RED; -fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: white;" text="REMOVE" textFill="#fcf8f8">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Label layoutX="266.0" layoutY="370.0" prefHeight="20.0" prefWidth="278.0" text="REGISTER CARRY-OVER COURSES FIRST">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="244.0" layoutY="392.0" prefHeight="20.0" prefWidth="111.0" text="FIRST SEMESTER">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="443.0" layoutY="390.0" prefHeight="20.0" prefWidth="134.0" text="SECOND SEMESTER">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
+      <TableView fx:id="Table1" layoutX="200.0" layoutY="422.0" onMousePressed="#table1_act" prefHeight="200.0" prefWidth="187.0">
+        <columns>
+          <TableColumn fx:id="NO1" prefWidth="48.79998779296875" text="Index" />
+          <TableColumn fx:id="C1" prefWidth="86.4000244140625" text="Course" />
+            <TableColumn fx:id="CREDIT1" prefWidth="51.20001220703125" text="Credit" />
+        </columns>
+      </TableView>
+      <TableView fx:id="Table2" layoutX="419.0" layoutY="416.0" onMousePressed="#table2_act" prefHeight="200.0" prefWidth="187.0">
+         <columns>
+            <TableColumn fx:id="NO2" prefWidth="50.4000244140625" text="Index" />
+            <TableColumn fx:id="C2" prefWidth="84.800048828125" text="Course" />
+            <TableColumn fx:id="CREDIT2" prefWidth="51.199951171875" text="Credit" />
+         </columns>
+      </TableView>
+      <ComboBox fx:id="SELECTCOURSE" layoutX="61.0" layoutY="396.0" onAction="#OnSelectCourseClick" prefHeight="26.0" prefWidth="133.0" />
+      <TextField fx:id="SURNAME" layoutX="221.0" layoutY="145.0" minHeight="-Infinity" prefHeight="20.0" prefWidth="383.0" />
+      <TextField fx:id="REG" layoutX="221.0" layoutY="119.0" minHeight="-Infinity" prefHeight="20.0" prefWidth="383.0" />
+      <TextField fx:id="OTHERS" layoutX="221.0" layoutY="171.0" minHeight="-Infinity" prefHeight="20.0" prefWidth="383.0" />
+      <ComboBox fx:id="DEPT" layoutX="221.0" layoutY="197.0" minHeight="-Infinity" onAction="#onSelectDeptView" prefHeight="26.0" prefWidth="383.0" />
+      <ComboBox fx:id="M_O_E" layoutX="220.0" layoutY="258.0" minHeight="-Infinity" prefHeight="22.0" prefWidth="383.0" AnchorPane.topAnchor="257.0" />
+      <ComboBox fx:id="GENDER" layoutX="462.0" layoutY="228.0" minHeight="-Infinity" prefHeight="22.0" prefWidth="142.0" />
+      <ComboBox fx:id="LEVEL" layoutX="221.0" layoutY="229.0" minHeight="-Infinity" onAction="#onSelectLevel" prefHeight="22.0" prefWidth="150.0" />
+      <ComboBox fx:id="SOO" layoutX="219.0" layoutY="339.0" minHeight="-Infinity" onAction="#OnSelectStateview" prefHeight="22.0" prefWidth="150.0" />
+      <ComboBox fx:id="LGA" layoutX="461.0" layoutY="339.0" minHeight="-Infinity" prefHeight="22.0" prefWidth="142.0" />
+      <Label alignment="CENTER" layoutX="380.0" layoutY="228.0" prefHeight="22.0" prefWidth="67.0" text="GENDER:" AnchorPane.leftAnchor="380.0" />
+      <Label alignment="CENTER" layoutX="367.0" layoutY="340.0" prefHeight="22.0" prefWidth="56.0" text="L.G.A:" AnchorPane.leftAnchor="380.0" />
+      <TextField fx:id="PHONE" layoutX="220.0" layoutY="287.0" minHeight="-Infinity" prefHeight="20.0" prefWidth="383.0" />
+      <TextField fx:id="EMAIL" layoutX="220.0" layoutY="312.0" minHeight="-Infinity" prefHeight="20.0" prefWidth="383.0" />
+      <ImageView fitHeight="80.0" fitWidth="114.0" layoutX="63.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Users/ADMIN/Pictures/earth.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="Submit" alignment="CENTER" layoutX="61.0" layoutY="518.0" mnemonicParsing="false" onAction="#onSubmit" prefHeight="30.0" prefWidth="67.0" style="-fx-background-color: GREEN; -fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: white;" text="SUBMIT" textFill="#fcf8f8">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <AnchorPane fx:id="pane1" layoutY="5.0" prefHeight="587.0" prefWidth="567.0" style="-fx-background-color: blue;" visible="false">
+         <children>
+            <Label layoutX="14.0" layoutY="70.0" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: blue;" text="Othernames:" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="40.0" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: blue;" text="Surename:" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="11.0" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: blue;" text="Matt/Reg:" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="100.0" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: blue;" text="Gender:" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="129.0" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: blue;" text="Phone:" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="161.0" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: blue;" text="Email:" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="191.0" prefHeight="27.0" prefWidth="696.0" style="-fx-background-color: blue;" text="L.G.A:" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="222.0" prefHeight="27.0" prefWidth="141.0" style="-fx-background-color: blue;" text="State of Origin:" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="252.0" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: blue;" text="Mode of Entry:" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="105.0" layoutY="343.0" prefHeight="18.0" prefWidth="134.0" style="-fx-background-color: blue;" text="First Semester" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="450.0" layoutY="341.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: blue;" text="SecondSemester" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="281.0" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: blue;" text="Department:" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="12.0" layoutY="310.0" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: blue;" text="Level:" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="Ent_reg" layoutX="206.0" layoutY="11.0" prefHeight="27.0" prefWidth="486.0" style="-fx-background-color: blue;" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="sur_ent" layoutX="206.0" layoutY="40.0" prefHeight="27.0" prefWidth="486.0" style="-fx-background-color: blue;" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="other_ent" layoutX="206.0" layoutY="70.0" prefHeight="27.0" prefWidth="486.0" style="-fx-background-color: blue;" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="Gender_ent" layoutX="206.0" layoutY="100.0" prefHeight="27.0" prefWidth="486.0" style="-fx-background-color: blue;" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="phone_ent" layoutX="206.0" layoutY="134.0" prefHeight="27.0" prefWidth="486.0" style="-fx-background-color: blue;" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="email_ent" layoutX="206.0" layoutY="161.0" prefHeight="27.0" prefWidth="486.0" style="-fx-background-color: blue;" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="Lga_ent" layoutX="206.0" layoutY="191.0" prefHeight="27.0" prefWidth="486.0" style="-fx-background-color: blue;" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="soo_ent" layoutX="206.0" layoutY="222.0" prefHeight="27.0" prefWidth="486.0" style="-fx-background-color: blue;" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="MoE_ent" layoutX="206.0" layoutY="252.0" prefHeight="27.0" prefWidth="486.0" style="-fx-background-color: blue;" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="Dept_ent" layoutX="206.0" layoutY="281.0" prefHeight="27.0" prefWidth="486.0" style="-fx-background-color: blue;" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="level_ent" layoutX="206.0" layoutY="310.0" prefHeight="27.0" prefWidth="486.0" style="-fx-background-color: blue;" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <TableView fx:id="table1_ent" layoutX="13.0" layoutY="378.0" prefHeight="200.0" prefWidth="332.0">
+              <columns>
+                <TableColumn fx:id="SN_Ent" prefWidth="39.20001220703125" text="Num" />
+                <TableColumn fx:id="CD_ent" prefWidth="82.39996337890625" text="Course Code" />
+                  <TableColumn fx:id="credit_ent" prefWidth="42.4000244140625" text="Credit" />
+                  <TableColumn fx:id="course_title" prefWidth="165.5999755859375" text="Course Title" />
+              </columns>
+            </TableView>
+            <TableView fx:id="table2_ent" layoutX="365.0" layoutY="377.0" prefHeight="200.0" prefWidth="338.0">
+               <columns>
+                  <TableColumn fx:id="SN2_Ent1" prefWidth="39.20001220703125" text="Num" />
+                  <TableColumn fx:id="CD2_ent1" prefWidth="82.39996337890625" text="Course Code" />
+                  <TableColumn fx:id="credit2_ent1" prefWidth="48.79998779296875" text="Credit" />
+                  <TableColumn fx:id="course_title2" prefWidth="166.39999999999998" text="Course Title" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="530.0" layoutY="363.0" prefHeight="26.0" prefWidth="32.0" text="*" textFill="RED" />
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
